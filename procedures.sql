@@ -1,5 +1,5 @@
 DELIMITER //
-CREATE PROCEDURE insere_daods()
+CREATE PROCEDURE insere_dados()
 BEGIN
 	DECLARE erro_sql TINYINT DEFAULT FALSE;
     DECLARE CONTINUE HANDLER FOR SQLEXCEPTION SET erro_sql = TRUE;
@@ -15,3 +15,5 @@ START TRANSACTION;
         SELECT 'Erro na transação!' AS resultado;
 	END IF;
 END //
+
+CALL insere_dados();
